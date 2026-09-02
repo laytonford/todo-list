@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "web" do |web|
     web.vm.hostname = "todo-web"
     web.vm.network "private_network", ip: "192.168.56.10"
+    web.vm.provision "shell", path: "build-webserver-vm.sh"
   end
 
   config.vm.define "app" do |app|
