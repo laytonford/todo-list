@@ -1,6 +1,4 @@
 * text=auto
 
-build-webserver-vm.sh text eol=lf
-build-appserver-vm.sh text eol=lf
-build-dbserver-vm.sh text eol=lf
-setup-database.sql text eol=lf
+*.sh text eol=lf
+*.sql text eol=lf
