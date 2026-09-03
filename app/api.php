@@ -17,7 +17,6 @@ if ($mysqli->connect_error) {
 
 $method = $_SERVER["REQUEST_METHOD"];
 
-// GET - return all tasks
 if ($method === "GET") {
 
     $result = $mysqli->query(
@@ -35,7 +34,6 @@ if ($method === "GET") {
     exit;
 }
 
-// POST - add a new task
 if ($method === "POST") {
 
     $data = json_decode(file_get_contents("php://input"), true);
@@ -64,7 +62,6 @@ if ($method === "POST") {
     exit;
 }
 
-// PUT - update whether a task is complete
 if ($method === "PUT") {
 
     $data = json_decode(file_get_contents("php://input"), true);
@@ -89,7 +86,6 @@ if ($method === "PUT") {
     exit;
 }
 
-// DELETE - remove a task
 if ($method === "DELETE") {
 
     $data = json_decode(file_get_contents("php://input"), true);
