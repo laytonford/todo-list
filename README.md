@@ -31,6 +31,17 @@ The project uses:
 - Git – version control
 
 ## Deployment
+Make sure you have installed:
+
+- Git
+- Vagrant
+- VirtualBox
+
+This project was developed using:
+
+- Git (ver. 2.55.0.windows.5)
+- Vagrant (ver. 2.4.9)
+- VirtualBox (ver. 7.2)
 
 Clone the repository and enter the project directory:
 
