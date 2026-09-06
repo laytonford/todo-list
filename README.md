@@ -47,21 +47,31 @@ This creates and provisions all three VMs automatically.
 
 Open the app in a browser with: http://192.168.56.10
 
+This comes preloaded with some test data to quickly demonstrate how the project works
+
 ## Verification
 
-Run: ./verify.sh
+Run: 
+
+    ./verify.sh
 
 The script checks that all three VMs are running and performs an application request that retrieves stored task data through the VM chain.
 
 ## Stopping
 
-To safely stop the VMs use: vagrant halt
+To safely stop the VMs use: 
 
-To start them again use: vagrant up
+    vagrant halt
+
+To start them again use: 
+
+    vagrant up
 
 ## Removal
 
-To remove all VMs created by the project use: vagrant destroy -f
+To remove all VMs created by the project use: 
+
+    vagrant destroy -f
 
 ## Development and Redeployment
 
@@ -71,7 +81,9 @@ Backend application logic is located in: app/api.php
 
 Changes to frontend or PHP files can be seen by refreshing the browser.
 
-Provisioning changes can be applied to a specific VM with: vagrant provision <vm-name>
+Provisioning changes can be applied to a specific VM with: 
+
+    vagrant provision <vm-name>
 
 
 A complete clean rebuild can be performed with:
@@ -79,7 +91,10 @@ A complete clean rebuild can be performed with:
     vagrant destroy -f
     vagrant up
 
-After making changes, run "./verify.sh" to verify the deployment.
+After making changes, run: 
+    ./verify.sh 
+
+to verify the deployment.
 
 ## Project Structure
 
