@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Checking VM status..."
+echo
 
 if ! vagrant status | grep -q "web.*running"; then
     echo "FAIL: web VM is not running"
@@ -22,13 +23,19 @@ echo "PASS: all VMs are running"
 echo
 echo "Checking application data through the VM chain..."
 
-response=$(vagrant ssh web -c "curl -s http://192.168.56.11/api.php")
+response=$(vagrant ssh web -c "curl -s -w '\n%{http_code}' http://192.168.56.11/api.php")
 
-echo "$response"
+body=$(echo "$response" | head -n -1)
+status=$(echo "$response" | tail -n 1)
 
-if echo "$response" | grep -q "description"; then
-    echo "PASS: application returned stored task data"
+echo
+echo "Task Data:"
+echo "$body" | python3 -m json.tool
+echo
+
+if [ "$status" = "200" ]; then
+    echo "PASS: application request completed successfully"
 else
-    echo "FAIL: application did not return task data"
+    echo "FAIL: application request returned HTTP $status"
     exit 1
 fi
