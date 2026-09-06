@@ -91,10 +91,9 @@ A complete clean rebuild can be performed with:
     vagrant destroy -f
     vagrant up
 
-After making changes, run: 
-    ./verify.sh 
+Verify deployment and see the made changes with: 
 
-to verify the deployment.
+    ./verify.sh 
 
 ## Project Structure
 
