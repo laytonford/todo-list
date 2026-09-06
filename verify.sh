@@ -24,6 +24,8 @@ echo "Checking application data through the VM chain..."
 
 response=$(vagrant ssh web -c "curl -s http://192.168.56.11/api.php")
 
+echo "$response"
+
 if echo "$response" | grep -q "description"; then
     echo "PASS: application returned stored task data"
 else
