@@ -62,7 +62,7 @@ This comes preloaded with some test data to quickly demonstrate how the project 
 
 ## Verification
 
-Run: 
+In Bash, Run: 
 
     ./verify.sh
 
